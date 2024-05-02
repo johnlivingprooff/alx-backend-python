@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Element length module"""
+"""Element length module with annotations"""
 from typing import List
 from typing import Tuple
 from typing import Sequence

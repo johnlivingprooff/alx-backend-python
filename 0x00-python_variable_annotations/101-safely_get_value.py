@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""TypeVar module"""
+"""TypeVar module with annotations"""
 from typing import Dict
 from typing import TypeVar
 from typing import Optional
