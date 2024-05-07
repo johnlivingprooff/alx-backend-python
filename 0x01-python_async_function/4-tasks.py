@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 """altering wait_n to use Task"""
 import asyncio
+from typing import List
 
 
 task_wait_random = __import__('3-tasks').task_wait_random
 
 
-def task_wait_n(n: int, max_delay: int) -> asyncio.Task:
+async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """returns a asyncio task"""
     tasks = [task_wait_random(max_delay) for _ in range(n)]
-    return asyncio.create_task(tasks)
+    tasks = asyncio.as_completed(tasks)
+    tasks = [await task for task in tasks]
+    return tasks
